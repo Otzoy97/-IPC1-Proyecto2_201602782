@@ -10,8 +10,7 @@ package viajes.BD;
  * @author HPBEATS
  */
 public class EntidadFinanciera {
-    String id, id_clientes, tipo, codigo;
-    float saldo, limite;
+    public String id, id_clientes, tipo, codigo, saldo, limite;
     /**
      * Establece los datos necesarios para guardar un instancia de EntidadFinanciera
      * @param id
@@ -21,7 +20,7 @@ public class EntidadFinanciera {
      * @param saldo
      * @param limite 
      */
-    public EntidadFinanciera(String id, String id_clientes, String tipo, String codigo, float saldo, float limite) {
+    public EntidadFinanciera(String id, String id_clientes, String tipo, String codigo, String saldo, String limite) {
         this.id = id;
         this.id_clientes = id_clientes;
         this.tipo = tipo;

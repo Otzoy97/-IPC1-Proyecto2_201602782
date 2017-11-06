@@ -10,13 +10,19 @@ package viajes.listas;
  * @author HPBEATS
  */
 public class Nodo {
-    //Enlaza los nodos
+    /**
+     * Enlaza los nodos
+     */ 
     public Nodo siguiente;
-    //Enlaza los nodos
+    /**
+     * Enlaza los nodos
+     */
     public Nodo anterior;
     //Guarda un valor entero
     public int dato;
-    //Guarda un Objeto
+    /**
+     * Guarda un objeto
+     */
     public Object objeto;
     //Guarda un String
     public String cadena;

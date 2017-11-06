@@ -4,13 +4,12 @@
  * and open the template in the editor.
  */
 package viajes.BD;
-
 /**
  *
  * @author HPBEATS
  */
 public class Clientes {
-    String id, nombre, apellido, notarjeta, 
+    public String id, nombre, apellido, notarjeta, 
             fecnacimiento, telefono, celular,
             domicilio, cpfrecuencia, cpmonto;
     /**
@@ -37,6 +36,5 @@ public class Clientes {
         this.domicilio = domicilio;
         this.cpfrecuencia = cpfrecuencia;
         this.cpmonto = cpmonto;
-    }
-    
+    }    
 }

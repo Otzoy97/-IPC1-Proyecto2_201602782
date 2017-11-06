@@ -10,11 +10,9 @@ package viajes.BD;
  * @author HPBEATS
  */
 public class Paquetes {
-    String id, tipo, clasificacion;
-    int max_pasajeros;
+    String id, tipo, clasificacion, max_pasajeros;
     String id_transporte, id_hospedaje ,id_crucero, 
-            id_autos_renta, id_destino, id_lugar;
-    float precio;
+            id_autos_renta, id_destino, id_lugar, precio;
     /**
      * Establece los datos necesarios para guardar un instancia de Paquetes
      * @param id
@@ -29,7 +27,7 @@ public class Paquetes {
      * @param id_lugar
      * @param precio 
      */
-    public Paquetes(String id, String tipo, String clasificacion, int max_pasajeros, String id_transporte, String id_hospedaje, String id_crucero, String id_autos_renta, String id_destino, String id_lugar, float precio) {
+    public Paquetes(String id, String tipo, String clasificacion, String max_pasajeros, String id_transporte, String id_hospedaje, String id_crucero, String id_autos_renta, String id_destino, String id_lugar, String precio) {
         this.id = id;
         this.tipo = tipo;
         this.clasificacion = clasificacion;

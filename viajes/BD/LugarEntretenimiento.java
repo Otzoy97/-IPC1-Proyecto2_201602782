@@ -10,8 +10,7 @@ package viajes.BD;
  * @author HPBEATS
  */
 public class LugarEntretenimiento {
-    String id, nombre, detalle, pais, ciudad, direccion;
-    int edad_requerida;
+    String id, nombre, detalle, pais, ciudad, direccion, edad_requerida;
     String hora_inicio, horarios, detalle_seguridad;
     /**
      * Establece los datos necesarios para guardar un instancia de LugarEntretenimiento
@@ -26,7 +25,7 @@ public class LugarEntretenimiento {
      * @param horarios
      * @param detalle_seguridad 
      */
-    public LugarEntretenimiento(String id, String nombre, String detalle, String pais, String ciudad, String direccion, int edad_requerida, String hora_inicio, String horarios, String detalle_seguridad) {
+    public LugarEntretenimiento(String id, String nombre, String detalle, String pais, String ciudad, String direccion, String edad_requerida, String hora_inicio, String horarios, String detalle_seguridad) {
         this.id = id;
         this.nombre = nombre;
         this.detalle = detalle;

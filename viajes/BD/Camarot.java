@@ -10,8 +10,7 @@ package viajes.BD;
  * @author HPBEATS
  */
 public class Camarot {
-    String id_crucero, id_reservacion, c_asignado;
-    float precio;
+    public String id_crucero, id_reservacion, c_asignado, precio;
     /**
      * Establece los datos necesarios para guardar un instancia de Camarot
      * @param id_crucero
@@ -19,7 +18,7 @@ public class Camarot {
      * @param c_asignado
      * @param precio 
      */
-    public Camarot(String id_crucero, String id_reservacion, String c_asignado, float precio) {
+    public Camarot(String id_crucero, String id_reservacion, String c_asignado, String precio) {
         this.id_crucero = id_crucero;
         this.id_reservacion = id_reservacion;
         this.c_asignado = c_asignado;

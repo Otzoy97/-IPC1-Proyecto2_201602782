@@ -28,7 +28,6 @@ public class ListaSimple {
     public String getId(){
         return id;
     }
-    
     /**
      * Constructor por defecto
      * @param nombre o identificador de la lista
@@ -69,7 +68,7 @@ public class ListaSimple {
         size++;
     }
     /**
-     * Busca si existe un Objeto en la lista
+     * Determina si existe un Objeto en la lista
      * @param referencia (Objeto) a buscar
      * @return true si existe el Objeto en la lista
      */
@@ -100,6 +99,7 @@ public class ListaSimple {
         if(buscar(referencia)){
             //Crea una copia de la lista
             Nodo aux = inicio;
+            //Recorre la lista hasta encontrar una coincidencia
             while(aux.objeto != referencia){
                 aux = aux.siguiente;
             }

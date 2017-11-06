@@ -10,8 +10,7 @@ package viajes.BD;
  * @author HPBEATS
  */
 public class Hoteles {
-    String Id, direccion, Id_destino;
-    int max_pieza;
+    public String Id, direccion, Id_destino, max_pieza;
     /**
      * Establece los datos necesarios para guardar un instancia de Hoteles
      * @param Id
@@ -19,7 +18,7 @@ public class Hoteles {
      * @param max_pieza
      * @param Id_destino 
      */
-    public Hoteles(String Id, String direccion, int max_pieza, String Id_destino) {
+    public Hoteles(String Id, String direccion, String max_pieza, String Id_destino) {
         this.Id = Id;
         this.direccion = direccion;
         this.max_pieza = max_pieza;

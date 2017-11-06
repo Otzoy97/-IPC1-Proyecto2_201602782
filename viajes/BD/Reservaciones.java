@@ -10,10 +10,8 @@ package viajes.BD;
  * @author HPBEATS
  */
 public class Reservaciones {
-    String id, id_paquete, id_cliente, fecha_reserva, fecha_partida;
-    int max_dias;
-    String estado;
-    float adeudo;
+    public String id, id_paquete, id_cliente, fecha_reserva, fecha_partida, max_dias;
+    public String estado, adeudo;
     /**
      * Establece los datos necesarios para guardar un instancia de Reservaciones
      * @param id
@@ -25,7 +23,7 @@ public class Reservaciones {
      * @param estado
      * @param adeudo 
      */
-    public Reservaciones(String id, String id_paquete, String id_cliente, String fecha_reserva, String fecha_partida, int max_dias, String estado, float adeudo) {
+    public Reservaciones(String id, String id_paquete, String id_cliente, String fecha_reserva, String fecha_partida, String max_dias, String estado, String adeudo) {
         this.id = id;
         this.id_paquete = id_paquete;
         this.id_cliente = id_cliente;

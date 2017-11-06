@@ -10,9 +10,7 @@ package viajes.BD;
  * @author HPBEATS
  */
 public class Cruceros {
-    String id, fecha_salida, fecha_llegada;
-    int max_viajero, max_duracion;
-    String detalle, id_destino;
+    public String id, fecha_salida, fecha_llegada, max_viajero, max_duracion, detalle, id_destino;
     /**
      * Establece los datos necesarios para guardar un instancia de Cruceros
      * @param id
@@ -23,7 +21,7 @@ public class Cruceros {
      * @param detalle
      * @param id_destino 
      */
-    public Cruceros(String id, String fecha_salida, String fecha_llegada, int max_viajero, int max_duracion, String detalle, String id_destino) {
+    public Cruceros(String id, String fecha_salida, String fecha_llegada, String max_viajero, String max_duracion, String detalle, String id_destino) {
         this.id = id;
         this.fecha_salida = fecha_salida;
         this.fecha_llegada = fecha_llegada;

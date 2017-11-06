@@ -10,7 +10,7 @@ package viajes.BD;
  * @author HPBEATS
  */
 public class DestinoTuristico {
-    String id, pais, ciudad, direccion, nombre_destino, detalle_seguridad;
+    public String id, pais, ciudad, direccion, nombre_destino, detalle_seguridad;
     /**
      * Establece los datos necesarios para guardar un instancia de Destino
      * @param id

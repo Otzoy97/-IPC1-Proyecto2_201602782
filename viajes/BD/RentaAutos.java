@@ -10,11 +10,8 @@ package viajes.BD;
  * @author HPBEATS
  */
 public class RentaAutos {
-    String id, id_cliente;
-    int max_ocupantes;
-    String tipo_terreno;
-    int dias_rentado;
-    float precio;
+    String id, id_cliente, max_ocupantes;
+    String tipo_terreno, dias_rentado, precio;
     String fecha_entrega, fecha_devolucion, detalle;
     /**
      * Establece los datos necesarios para guardar un instancia de RentaAutos
@@ -28,7 +25,7 @@ public class RentaAutos {
      * @param fecha_devolucion
      * @param detalle 
      */
-    public RentaAutos(String id, String id_cliente, int max_ocupantes, String tipo_terreno, int dias_rentado, float precio, String fecha_entrega, String fecha_devolucion, String detalle) {
+    public RentaAutos(String id, String id_cliente, String max_ocupantes, String tipo_terreno, String dias_rentado, String precio, String fecha_entrega, String fecha_devolucion, String detalle) {
         this.id = id;
         this.id_cliente = id_cliente;
         this.max_ocupantes = max_ocupantes;

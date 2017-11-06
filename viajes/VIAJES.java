@@ -5,21 +5,22 @@
  */
 package viajes;
 /**
- * 
- */
-import viajes.listas.ListaSimple;
-/**
  *
  * @author HPBEATS
  */
 public class VIAJES {
+    
     /**
      * @param args the command line arguments
-     */
-    ListaSimple transportes = new ListaSimple("transportes");
+    */
     public static void main(String[] args) {
         // TODO code application logic here
-    }/*
+    }
+    public void VIAJES(){
+        
+    }
+    /*
+    
     public void imprimir(){
         ListaSimple aux = transportes;
         Transporte ref;

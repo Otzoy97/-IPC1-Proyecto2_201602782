@@ -12,14 +12,37 @@ import java.io.FileReader;
 import java.io.IOException;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import viajes.BD.Transporte;
+import viajes.BD.*;
 import viajes.listas.ListaSimple;
+import viajes.listas.Pila;
 
 /**
- *
+ * Controla la carga y lectura de archivos '.csv'
+ * Llena las listas con la informacion proporcionada en los archivos '.csv'
+ * 
  * @author HPBEATS
  */
 public class Carga {
+    public Transporte transporte;
+    public Asiento asiento;
+    public Hoteles hoteles;
+    public Habitacion habitacion;
+    public Cruceros cruceros;
+    public Camarot camarot;
+    public RentaAutos renta;
+    public DestinoTuristico destino;
+    public LugarEntretenimiento lugar;
+    public Clientes clientes;
+    public EntidadFinanciera entidad;
+    public Paquetes paquetes;
+    public Reservaciones reservaciones;
+    /**
+     * Consulta el identificador del modulo;
+     * @return Identificador de clase
+     */
+    public String getId(){
+        return "Carga";
+    }
     /**
      * Despliega un JFileChooser, permitiendóle al usuario seleccionar un archivo '.csv'
      * @return Archivo.csv que se seleccionó para cargar
@@ -64,14 +87,34 @@ public class Carga {
         if(file != null){
             BufferedReader fileBuffer = new BufferedReader(new FileReader(file));
             while((texto = fileBuffer.readLine())!=null){
-                //Agrega la información proporcionada en 'linea' a una 'lista'
                 lista.agregarAlFinal(getObject(texto,lista.getId()));
+            }
+            fileBuffer.close();
+        }
+    }//fillList(openFile(),transporte);
+    /**
+     * Llena una pila (pila) con 'una' línea leída del archivo (file) '.csv'
+     * 
+     * @method getObject Crea una clase segun sea el identificador (nombre); separa y almacena los atributos que se proporcionan en 'linea'
+     * @param file archivo a leer
+     * @param pila se llena con la linea deseada
+     * @throws FileNotFoundException
+     * @throws IOException 
+     */
+    public void fillPila(File file, Pila pila) throws FileNotFoundException, IOException{
+        //Variable en donde se almacena la línea leída
+        String texto;
+        //Verifica si el archivo es válido 
+        if(file != null){
+            BufferedReader fileBuffer = new BufferedReader(new FileReader(file));
+            while((texto = fileBuffer.readLine())!=null){
+                pila.Apilar(getObject(texto,pila.getId()));
             }
             fileBuffer.close();
         }
     }
     public void writeFile(){
-        
+
     }
     /**
      * Crea una clase segun sea el identificador (nombre); separa y almacena los atributos que se proporcionan en 'linea'
@@ -83,10 +126,124 @@ public class Carga {
         String[] atributos = linea.split(",");
         //Segun sea la lista, se llenará con los datos que contiene la linea del archivo '.csv' cargado
         switch(nombre){
-            case "transportes":
-                Transporte t = new Transporte(atributos[0],atributos[1],atributos[2],atributos[3],atributos[4]);
-                return (Object) t;
-        }
+            case "transporte":
+                transporte = new Transporte(atributos[0],
+                    atributos[1],
+                    atributos[2],
+                    atributos[3],
+                    atributos[4]);
+                return (Object) transporte;
+            case "asiento":
+                asiento = new Asiento(atributos[0],
+                    atributos[1],
+                    atributos[2],
+                    atributos[3],
+                    atributos[4]);
+                return (Object) asiento;
+            case "hoteles":
+                hoteles = new Hoteles(atributos[0],
+                    atributos[1],
+                    atributos[2],
+                    atributos[3]);
+                return (Object) hoteles;
+            case "habitacion":
+                habitacion = new Habitacion(atributos[0],
+                    atributos[1],
+                    atributos[2],
+                    atributos[3],
+                    atributos[4],
+                    atributos[5]);
+                return (Object) habitacion;
+            case "cruceros":
+                cruceros = new Cruceros(atributos[0],
+                    atributos[1],
+                    atributos[2],
+                    atributos[3],
+                    atributos[4],
+                    atributos[5],
+                    atributos[6]);
+                return (Object) cruceros;
+            case "camarot":
+                camarot = new Camarot(atributos[0],
+                    atributos[1],
+                    atributos[2],
+                    atributos[3]);
+                return (Object) camarot;
+            case "renta_autos":
+                renta = new RentaAutos(atributos[0],
+                    atributos[1],
+                    atributos[2],
+                    atributos[3],
+                    atributos[4],
+                    atributos[5],
+                    atributos[6],
+                    atributos[7],
+                    atributos[8]);
+                return (Object) renta;
+            case "destinos":
+                destino = new DestinoTuristico(atributos[0],
+                    atributos[1],
+                    atributos[2],
+                    atributos[3],
+                    atributos[4],
+                    atributos[5]);
+                return (Object) destino;
+            case "lugares":
+                lugar = new LugarEntretenimiento(atributos[0],
+                    atributos[1],
+                    atributos[2],
+                    atributos[3],
+                    atributos[4],
+                    atributos[5],
+                    atributos[6],
+                    atributos[7],
+                    atributos[8],
+                    atributos[9]);
+                return (Object) lugar;
+            case "clientes":
+                clientes = new Clientes(atributos[0],
+                    atributos[1],
+                    atributos[2],
+                    atributos[3],
+                    atributos[4],
+                    atributos[5],
+                    atributos[6],
+                    atributos[7],
+                    atributos[8],
+                    atributos[9]);
+                return (Object) clientes;
+            case "entidad":
+                entidad = new EntidadFinanciera(atributos[0],
+                    atributos[1],
+                    atributos[2],
+                    atributos[3],
+                    atributos[4],
+                    atributos[5]);
+                return (Object) entidad;
+            case "paquetes":
+                paquetes = new Paquetes(atributos[0],
+                    atributos[1],
+                    atributos[2],
+                    atributos[3],
+                    atributos[4],
+                    atributos[5],
+                    atributos[6],
+                    atributos[7],
+                    atributos[8],
+                    atributos[9],
+                    atributos[10]);
+                return (Object) paquetes;  
+            case "reservaciones":
+                reservaciones = new Reservaciones(atributos[0],
+                    atributos[1],
+                    atributos[2],
+                    atributos[3],
+                    atributos[4],
+                    atributos[5],
+                    atributos[6],
+                    atributos[7]);
+                return (Object) reservaciones;                
+        }       
         return null;
     }
 }

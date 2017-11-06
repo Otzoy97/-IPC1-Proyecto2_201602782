@@ -10,18 +10,18 @@ package viajes.BD;
  * @author HPBEATS
  */
 public class Habitacion {
-    String no_pieza, id_reservacion, clase;
-    int max_ocupante;
-    float precio;
+    public String id_hoteles, no_pieza, id_reservacion, clase, max_ocupante, precio;
     /**
      * Establece los datos necesarios para guardar un instancia de Habitacion
+     * @param id_hoteles
      * @param no_pieza
      * @param id_reservacion
      * @param clase
      * @param max_ocupante
      * @param precio 
      */
-    public Habitacion(String no_pieza, String id_reservacion, int max_ocupante, float precio, String clase) {
+    public Habitacion(String id_hoteles, String no_pieza, String id_reservacion, String max_ocupante, String precio, String clase) {
+        this.id_hoteles = id_hoteles;
         this.no_pieza = no_pieza;
         this.id_reservacion = id_reservacion;
         this.clase = clase;
