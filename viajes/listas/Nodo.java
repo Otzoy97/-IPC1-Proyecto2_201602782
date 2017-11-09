@@ -18,13 +18,17 @@ public class Nodo {
      * Enlaza los nodos
      */
     public Nodo anterior;
-    //Guarda un valor entero
-    public int dato;
+    /**
+     * Guarda un valor entero
+     */
+    //public int dato;
     /**
      * Guarda un objeto
      */
     public Object objeto;
-    //Guarda un String
+    /**
+     * Guarda un String
+     */
     public String cadena;
     /**
      * Constructor por defecto
@@ -42,14 +46,14 @@ public class Nodo {
      * Inicializa el Nodo para que guarda tipos int
      * @param dato entero a almacenar
      */
-    public Nodo(int dato){
-        this.dato = dato;
-    }
+    //public Nodo(int dato){
+    //    this.dato = dato;
+    //}
     /**
      * Inicializar el Nodo para que gurde tipos String
      * @param cadena 
      */
-    public Nodo(String cadena){
-        this.cadena = cadena;
-    }
+    //public Nodo(String cadena){
+    //    this.cadena = cadena;
+    //}
 }

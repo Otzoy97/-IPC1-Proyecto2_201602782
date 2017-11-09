@@ -28,5 +28,42 @@ public class DestinoTuristico {
         this.nombre_destino = nombre_destino;
         this.detalle_seguridad = detalle_seguridad;
     }
+
+    public DestinoTuristico() {
+    }
     
+    /**
+     * Devuelve la cadena de texto alojada en 'claseReferencia' en la 'posicionComa'
+     * @param claseReferencia dominio en donde se cuentra la información solicitada
+     * @param posicionComa posición de "columna" donde se cuentra la informacion solicitada
+     * @return
+     */
+    public String getBD(DestinoTuristico claseReferencia, int posicionComa){
+        //Variable que alojará el texto en a posicionComa de claseReferencia
+        String referencia;
+        //Según sea la posiciónComa, se guarda en referencia
+        switch(posicionComa){
+                case 0:
+                    referencia = claseReferencia.id;
+                    break;
+                case 1:
+                    referencia = claseReferencia.pais;
+                    break;
+                case 2:
+                    referencia = claseReferencia.ciudad;
+                    break;
+                case 3:
+                    referencia = claseReferencia.direccion;
+                    break;
+                case 4:
+                    referencia = claseReferencia.nombre_destino;
+                    break;
+                case 5: 
+                    referencia = claseReferencia.detalle_seguridad;
+                    break;
+                default:
+                    return null;
+            }
+        return referencia;
+    }
 }

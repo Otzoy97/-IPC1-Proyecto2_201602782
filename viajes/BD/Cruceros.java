@@ -30,5 +30,44 @@ public class Cruceros {
         this.detalle = detalle;
         this.id_destino = id_destino;
     }
-    
+    /**
+     * Devuelve la cadena de texto alojada en 'claseReferencia' en la 'posicionComa'
+     * @param claseReferencia dominio en donde se cuentra la información solicitada
+     * @param posicionComa posición de "columna" donde se cuentra la informacion solicitada
+     * @return
+     */
+    public String getBD(Cruceros claseReferencia, int posicionComa){
+        //Variable que alojará el texto en a posicionComa de claseReferencia
+        String referencia;
+        //Según sea la posiciónComa, se guarda en referencia
+        switch(posicionComa){
+                case 0:
+                    referencia = claseReferencia.id;
+                    break;
+                case 1:
+                    referencia = claseReferencia.fecha_salida;
+                    break;
+                case 2:
+                    referencia = claseReferencia.fecha_llegada;
+                    break;
+                case 3:
+                    referencia = claseReferencia.max_viajero;
+                    break;
+                case 4:
+                    referencia = claseReferencia.max_duracion;
+                    break;
+                case 5: 
+                    referencia = claseReferencia.detalle;
+                    break;
+                case 6:
+                    referencia = claseReferencia.id_destino;
+                    break;
+                default:
+                    return null;
+            }
+        return referencia;
+    }
+
+    public Cruceros() {
+    }
 }

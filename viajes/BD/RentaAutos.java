@@ -36,5 +36,51 @@ public class RentaAutos {
         this.fecha_devolucion = fecha_devolucion;
         this.detalle = detalle;
     }
+
+    public RentaAutos() {
+    }
     
+    /**
+     * Devuelve la cadena de texto alojada en 'claseReferencia' en la 'posicionComa'
+     * @param claseReferencia dominio en donde se cuentra la información solicitada
+     * @param posicionComa posición de "columna" donde se cuentra la informacion solicitada
+     * @return
+     */
+    public String getBD(RentaAutos claseReferencia, int posicionComa){
+        //Variable que alojará el texto en a posicionComa de claseReferencia
+        String referencia;
+        //Según sea la posiciónComa, se guarda en referencia
+        switch(posicionComa){
+                case 0:
+                    referencia = claseReferencia.id;
+                    break;
+                case 1:
+                    referencia = claseReferencia.id_cliente;
+                    break;
+                case 2:
+                    referencia = claseReferencia.max_ocupantes;
+                    break;
+                case 3:
+                    referencia = claseReferencia.tipo_terreno;
+                    break;
+                case 4:
+                    referencia = claseReferencia.dias_rentado;
+                    break;
+                case 5: 
+                    referencia = claseReferencia.precio;
+                    break;
+                case 6:
+                    referencia = claseReferencia.fecha_entrega;
+                    break;
+                case 7:
+                    referencia = claseReferencia.fecha_devolucion;
+                    break;
+                case 8:
+                    referencia = claseReferencia.detalle;
+                    break;
+                default:
+                    return null;
+            }
+        return referencia;
+    }
 }

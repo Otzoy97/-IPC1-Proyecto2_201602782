@@ -29,10 +29,40 @@ public class Transporte{
         this.max_pasajeros = max_pasajeros;
         this.id_destino = id_destino;
     }
-    public Transporte BuscarV(String expresion, Object dominio, String criterio ){
-        Transporte transporte = (Transporte) dominio;
-        
-        return transporte;
+
+    public Transporte() {
+    }
+    
+    /**
+     * Devuelve la cadena de texto alojada en 'claseReferencia' en la 'posicionComa'
+     * @param claseReferencia dominio en donde se cuentra la información solicitada
+     * @param posicionComa posición de "columna" donde se cuentra la informacion solicitada
+     * @return
+     */
+    public String getBD(Transporte claseReferencia, int posicionComa){
+        //Variable que alojará el texto en a posicionComa de claseReferencia
+        String referencia;
+        //Según sea la posiciónComa, se guarda en referencia
+        switch(posicionComa){
+                case 0:
+                    referencia = claseReferencia.id;
+                    break;
+                case 1:
+                    referencia = claseReferencia.hora_salida;
+                    break;
+                case 2:
+                    referencia = claseReferencia.hora_llegada;
+                    break;
+                case 3:
+                    referencia = claseReferencia.max_pasajeros;
+                    break;
+                case 4:
+                    referencia = claseReferencia.id_destino;
+                    break;
+                default:
+                    return null;
+            }
+        return referencia;
     }
 
 }

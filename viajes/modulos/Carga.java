@@ -13,6 +13,7 @@ import java.io.IOException;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import viajes.BD.*;
+import viajes.listas.Cola;
 import viajes.listas.ListaSimple;
 import viajes.listas.Pila;
 
@@ -94,21 +95,20 @@ public class Carga {
     }//fillList(openFile(),transporte);
     /**
      * Llena una pila (pila) con 'una' línea leída del archivo (file) '.csv'
-     * 
      * @method getObject Crea una clase segun sea el identificador (nombre); separa y almacena los atributos que se proporcionan en 'linea'
+     * @param cola se llena con la linea deseada
      * @param file archivo a leer
-     * @param pila se llena con la linea deseada
      * @throws FileNotFoundException
      * @throws IOException 
      */
-    public void fillPila(File file, Pila pila) throws FileNotFoundException, IOException{
+    public void llenarCola(File file, Cola cola) throws FileNotFoundException, IOException{
         //Variable en donde se almacena la línea leída
         String texto;
         //Verifica si el archivo es válido 
         if(file != null){
             BufferedReader fileBuffer = new BufferedReader(new FileReader(file));
             while((texto = fileBuffer.readLine())!=null){
-                pila.Apilar(getObject(texto,pila.getId()));
+                cola.Encolar(getObject(texto,cola.getId()));
             }
             fileBuffer.close();
         }
@@ -132,20 +132,20 @@ public class Carga {
                     atributos[2],
                     atributos[3],
                     atributos[4]);
-                return (Object) transporte;
+                return transporte;
             case "asiento":
                 asiento = new Asiento(atributos[0],
                     atributos[1],
                     atributos[2],
                     atributos[3],
                     atributos[4]);
-                return (Object) asiento;
+                return asiento;
             case "hoteles":
                 hoteles = new Hoteles(atributos[0],
                     atributos[1],
                     atributos[2],
                     atributos[3]);
-                return (Object) hoteles;
+                return hoteles;
             case "habitacion":
                 habitacion = new Habitacion(atributos[0],
                     atributos[1],
@@ -153,7 +153,7 @@ public class Carga {
                     atributos[3],
                     atributos[4],
                     atributos[5]);
-                return (Object) habitacion;
+                return habitacion;
             case "cruceros":
                 cruceros = new Cruceros(atributos[0],
                     atributos[1],
@@ -162,13 +162,13 @@ public class Carga {
                     atributos[4],
                     atributos[5],
                     atributos[6]);
-                return (Object) cruceros;
+                return cruceros;
             case "camarot":
                 camarot = new Camarot(atributos[0],
                     atributos[1],
                     atributos[2],
                     atributos[3]);
-                return (Object) camarot;
+                return camarot;
             case "renta_autos":
                 renta = new RentaAutos(atributos[0],
                     atributos[1],
@@ -179,7 +179,7 @@ public class Carga {
                     atributos[6],
                     atributos[7],
                     atributos[8]);
-                return (Object) renta;
+                return renta;
             case "destinos":
                 destino = new DestinoTuristico(atributos[0],
                     atributos[1],
@@ -187,7 +187,7 @@ public class Carga {
                     atributos[3],
                     atributos[4],
                     atributos[5]);
-                return (Object) destino;
+                return destino;
             case "lugares":
                 lugar = new LugarEntretenimiento(atributos[0],
                     atributos[1],
@@ -199,7 +199,7 @@ public class Carga {
                     atributos[7],
                     atributos[8],
                     atributos[9]);
-                return (Object) lugar;
+                return lugar;
             case "clientes":
                 clientes = new Clientes(atributos[0],
                     atributos[1],
@@ -211,7 +211,7 @@ public class Carga {
                     atributos[7],
                     atributos[8],
                     atributos[9]);
-                return (Object) clientes;
+                return clientes;
             case "entidad":
                 entidad = new EntidadFinanciera(atributos[0],
                     atributos[1],
@@ -219,7 +219,7 @@ public class Carga {
                     atributos[3],
                     atributos[4],
                     atributos[5]);
-                return (Object) entidad;
+                return entidad;
             case "paquetes":
                 paquetes = new Paquetes(atributos[0],
                     atributos[1],
@@ -232,7 +232,7 @@ public class Carga {
                     atributos[8],
                     atributos[9],
                     atributos[10]);
-                return (Object) paquetes;  
+                return paquetes;  
             case "reservaciones":
                 reservaciones = new Reservaciones(atributos[0],
                     atributos[1],
@@ -242,7 +242,7 @@ public class Carga {
                     atributos[5],
                     atributos[6],
                     atributos[7]);
-                return (Object) reservaciones;                
+                return reservaciones;                
         }       
         return null;
     }

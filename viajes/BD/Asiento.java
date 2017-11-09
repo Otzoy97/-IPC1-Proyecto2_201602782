@@ -29,4 +29,35 @@ public class Asiento {
         this.clase = clase;
         this.monto_pasaje = monto_pasaje;
     }   
+    /**
+     * Devuelve la cadena de texto alojada en 'claseReferencia' en la 'posicionComa'
+     * @param claseReferencia dominio en donde se cuentra la información solicitada
+     * @param posicionComa posición de "columna" donde se cuentra la informacion solicitada
+     * @return
+     */
+    public String getBD(Asiento claseReferencia, int posicionComa){
+        //Variable que alojará el texto en a posicionComa de claseReferencia
+        String referencia;
+        //Según sea la posiciónComa, se guarda en referencia
+        switch(posicionComa){
+                case 0:
+                    referencia = claseReferencia.id_transporte;
+                    break;
+                case 1:
+                    referencia = claseReferencia.id_reservacion;
+                    break;
+                case 2:
+                    referencia = claseReferencia.no_asignado;
+                    break;
+                case 3:
+                    referencia = claseReferencia.clase;
+                    break;
+                case 4:
+                    referencia = claseReferencia.monto_pasaje;
+                    break;
+                default:
+                    return null;
+            }
+        return referencia;
+    }
 }
