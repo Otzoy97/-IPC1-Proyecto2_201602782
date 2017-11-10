@@ -18,7 +18,7 @@ import viajes.listas.*;
  * @author HPBEATS
  */
 public class MReservaciones {
-    Carga carga = new Carga();
+    MCarga carga = new MCarga();
     /**
      * Estado anulada
      */
@@ -171,7 +171,7 @@ public class MReservaciones {
         //Dará el formato deseado a comparar
         SimpleDateFormat auxFormat = new SimpleDateFormat("dd/MM/yyyy");
         //Cuidado con los errores
-        try{
+        //try{
             //Crea una variable temporal que servira para compara con expresion
             String referencia;
             //Segun el objeto guardado en la lista se procederá con el mismo procedimiento
@@ -189,8 +189,14 @@ public class MReservaciones {
                         refReservas = (Reservaciones) colaReservaciones.buscar(getId, 0);
                         //Busca el formato adecuado a la fecha de partida de reservacion anterior
                         auxFecha = new SimpleDateFormat(mm.tryParse(refReservas.fecha_partida));
-                        //Acopla la referencia -> dd/MM/yyyy + idAHC
-                        referencia = auxFormat.format(auxFecha.parse(refReservas.fecha_partida)) + idAHC;
+                        //
+                        referencia = refReservas.fecha_partida + idAHC;
+                        try {
+                            //Acopla la referencia -> dd/MM/yyyy + idAHC
+                            referencia = auxFormat.format(auxFecha.parse(refReservas.fecha_partida)) + idAHC;
+                        } catch (ParseException ex) {
+                            Logger.getLogger(MReservaciones.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                         //Verifica que la referencia y la expresion dada sean iguales
                         if (expresion.equals(referencia)){
                             //Aumenta el contador
@@ -214,7 +220,12 @@ public class MReservaciones {
                         String getId = refHabitacion.id_reservacion;
                         refReservas = (Reservaciones) colaReservaciones.buscar(getId, 0);
                         auxFecha = new SimpleDateFormat(mm.tryParse(refReservas.fecha_partida));
-                        referencia = auxFormat.format(auxFecha.parse(refReservas.fecha_partida)) + idAHC;
+                        referencia = refReservas.fecha_partida + idAHC;
+                        try {
+                            referencia = auxFormat.format(auxFecha.parse(refReservas.fecha_partida)) + idAHC;
+                        } catch (ParseException ex) {
+                            Logger.getLogger(MReservaciones.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                         //
                         if (expresion.equals(referencia)){
                             cuenta++;
@@ -235,7 +246,12 @@ public class MReservaciones {
                         String getId = refCamarot.id_reservacion;
                         refReservas = (Reservaciones) colaReservaciones.buscar(getId, 0);
                         auxFecha = new SimpleDateFormat(mm.tryParse(refReservas.fecha_partida));
-                        referencia = auxFormat.format(auxFecha.parse(refReservas.fecha_partida)) + idAHC;
+                        referencia = refReservas.fecha_partida + idAHC;
+                        try {
+                            referencia = auxFormat.format(auxFecha.parse(refReservas.fecha_partida)) + idAHC;
+                        } catch (ParseException ex) {
+                            Logger.getLogger(MReservaciones.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                         //
                         if (expresion.equals(referencia)){
                             cuenta++;
@@ -246,8 +262,8 @@ public class MReservaciones {
                     }
                     break;
             }
-        }catch(Exception e){
-        }
+        //}catch(Exception e){
+      //  }
         retorno[0] = ultimo;
         retorno[1] = cuenta+"";
         return retorno;

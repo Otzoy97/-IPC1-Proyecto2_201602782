@@ -10,9 +10,9 @@ package viajes.BD;
  * @author HPBEATS
  */
 public class RentaAutos {
-    String id, id_cliente, max_ocupantes;
-    String tipo_terreno, dias_rentado, precio;
-    String fecha_entrega, fecha_devolucion, detalle;
+    public String id, id_cliente, max_ocupantes;
+    public String tipo_terreno, dias_rentado, precio;
+    public String fecha_entrega, fecha_devolucion, detalle;
     /**
      * Establece los datos necesarios para guardar un instancia de RentaAutos
      * @param id
